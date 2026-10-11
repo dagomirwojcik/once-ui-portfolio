@@ -1,0 +1,22 @@
+.contactForm-turnstileRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 16px 0;
+  align-items: flex-start;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .contactForm-turnstileRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .contactForm-turnstileRow .contactForm-submit {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+}

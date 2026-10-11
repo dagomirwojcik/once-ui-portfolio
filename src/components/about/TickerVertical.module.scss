@@ -1,0 +1,92 @@
+.tickerVerticalContainer {
+  width: 100%;
+  overflow: hidden;
+  /* Remove border and border-radius for shared box */
+  background: transparent;
+  position: relative;
+}
+
+.tickerVerticalBare {
+  border-radius: var(--radius-m);
+  background: color-mix(in lab, var(--bg-overlay) 8%, transparent);
+  border: 1px solid color-mix(in lab, currentColor 10%, transparent);
+}
+
+.tickerVerticalContent {
+  display: flex;
+  flex-direction: column;
+  animation: ticker-vertical linear infinite;
+}
+
+.tickerVerticalItem {
+  font-size: 0.9rem;
+  color: #fff;
+  opacity: 0.85;
+  line-height: 2.2em;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+[data-theme="light"] .tickerVerticalItem {
+  color: #111;
+}
+
+.tickerVerticalItemRight {
+  justify-content: flex-end;
+  padding-left: 0;
+  padding-right: 1em;
+  text-align: right;
+}
+
+.tickerVerticalItemCenter {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
+.tickerVerticalItemWithIcon {
+  gap: 0.75em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.tickerVerticalItemCenter.tickerVerticalItemWithIcon {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tickerVerticalIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.tickerVerticalLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  text-align: inherit;
+}
+
+.tickerVerticalItemCenter .tickerVerticalLabel {
+  text-align: center;
+}
+
+@keyframes ticker-vertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+} 

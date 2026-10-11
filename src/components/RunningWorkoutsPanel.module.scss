@@ -1,0 +1,132 @@
+.card {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: var(--radius-l);
+  border: 2px solid var(--glass-card-border);
+  background: var(--glass-card-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  overflow: hidden;
+  z-index: var(--glass-z-index);
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.content {
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 250ms ease-out;
+}
+
+.workoutLink {
+  display: grid;
+  grid-template-columns: minmax(96px, 120px) minmax(0, 1fr);
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.routeFrame {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-m);
+  border: 1px solid color-mix(in lab, currentColor 12%, transparent);
+  background: color-mix(in lab, var(--bg-overlay) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.routeSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.routePath {
+  stroke: var(--brand-on-background-strong, currentColor);
+  stroke-width: 2.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.routeFallback,
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 120px;
+  text-align: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.workoutName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.statsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--neutral-on-background-weak);
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .workoutLink {
+    grid-template-columns: 1fr;
+  }
+
+  .routeFrame {
+    max-width: 140px;
+    margin: 0 auto;
+  }
+}

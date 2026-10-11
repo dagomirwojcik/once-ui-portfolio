@@ -1,0 +1,30 @@
+@use "./breakpoints.scss" as breakpoints;
+
+.footerContainer {
+  position: relative;
+  
+  @media (max-width: breakpoints.$s) {
+    flex-direction: column-reverse !important;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+}
+
+.copyrightText {
+  margin-right: 128px;
+  
+  @media (max-width: breakpoints.$s) {
+    margin-right: 0;
+    margin-top: 16px;
+  }
+}
+
+.socialIcons {
+  margin-left: 128px;
+  
+  @media (max-width: breakpoints.$s) {
+    margin-left: 0;
+    margin-bottom: 16px;
+  }
+}

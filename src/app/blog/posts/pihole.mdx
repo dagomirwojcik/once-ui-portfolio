@@ -1,0 +1,53 @@
+---
+title: "Pi-Hole"
+summary: "Dagomir Wójcik built a custom Pi-Hole network ad-blocker using Raspberry Pi Zero, enhancing privacy and eliminating advertisements across all connected devices."
+publishedAt: "2020-08-11"
+image: "https://upload.wikimedia.org/wikipedia/commons/0/00/Pi-hole_Logo.png"
+tag: "Blog"
+---
+
+<Media
+  enlarge
+  src="https://upload.wikimedia.org/wikipedia/commons/0/00/Pi-hole_Logo.png"
+  alt="Pi-Hole Logo"
+  radius="xl"
+  border="neutral-alpha-medium"
+  aspectRatio="1/1.05"
+/>
+
+## The Quest for Ad-Free Browsing 🚀
+
+During the early days of quarantine I was looking for weekend projects to fill the time. One annoyance kept coming back: **ads.** Watching something on All4 and sitting through five minutes of adverts before the programme starts is maddening. Five minutes is not forever, but it is long enough to grate.
+
+## A £25 Solution That Changes Everything 💸
+
+I found a setup for under £25 that works across all my devices. Plenty of streaming services charge for ad-free tiers (hello, YouTube Premium). I would rather build something myself.
+
+## The Raspberry Pi: A Tiny Powerhouse ⚡
+
+The Raspberry Pi Zero is a small board for about £5. You are not replacing your laptop with it, but it works well as a server. For my build I used:
+
+- A micro-USB power supply
+- A micro-SD card
+- A micro-USB to ethernet dongle
+- An ethernet cable
+
+You can plug in a monitor, but I set everything up over the command line, which made it harder and more satisfying when it worked.
+
+## How Pi-Hole Works 🧠
+
+Pi-Hole points your DNS at a custom server you run. When an app or browser asks for ad domains, Pi-Hole blocks those requests so the ads never load. Your device basically gets told there is nowhere to fetch the ad from.
+
+**The result?** Fewer mobile ads when you are trying to use an app, and an extra layer of privacy because your ISP sees less of what you are looking up across devices on the network.
+
+## The Setup Challenge 🛠️
+
+I will be honest: the setup was an adventure. I had no Linux or CLI experience and was mostly copying commands from tutorials. Still, there is something good about following steps and seeing the admin panel come up in a browser at the end.
+
+## Customisation and Control ⚙️
+
+Out of the box Pi-Hole blocks a lot of ad and tracking domains. You can go further in the settings and block specific sites or IPs if you want. You can set DNS per device or on the router for whole-network blocking.
+
+## A Project Worth the Effort ✅
+
+It was one of my favourite lockdown projects: new skills, a clear problem solved, and something I still use. Building your own network-wide ad blocker beats paying a subscription, at least for me.

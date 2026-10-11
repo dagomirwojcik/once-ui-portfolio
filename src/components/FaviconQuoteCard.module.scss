@@ -1,0 +1,31 @@
+// FaviconQuoteCard Responsive Layout
+.faviconQuoteCard {
+  @media (min-width: 768px) {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 767px) {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 16px;
+    
+    .blockquoteContainer {
+      text-align: center;
+    }
+  }
+}
+
+.faviconContainer {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.blockquoteContainer {
+  @media (max-width: 767px) {
+    flex: 1 !important;
+    width: 100% !important;
+  }
+}

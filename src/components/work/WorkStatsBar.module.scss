@@ -1,0 +1,28 @@
+.bar {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: var(--radius-l);
+  border: 2px solid var(--glass-card-border);
+  background: var(--glass-card-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  padding: 24px 20px;
+  z-index: var(--glass-z-index);
+  transition: all 0.3s ease;
+}
+
+.statsRow {
+  width: 100%;
+}
+
+.stat {
+  min-width: 120px;
+  max-width: 180px;
+}
+
+@media (max-width: 640px) {
+  .stat {
+    min-width: calc(50% - 16px);
+    max-width: none;
+  }
+}

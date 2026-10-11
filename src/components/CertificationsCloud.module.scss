@@ -1,0 +1,87 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 7fr; /* 30% heading, 70% logos */
+  gap: 16px;
+  width: 100%;
+  align-items: center; /* vertically center columns */
+}
+
+.cloud {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* exactly three logos */
+  gap: 16px;
+  width: 100%;
+  place-items: center; /* center horizontally and vertically in cells */
+  align-content: center; /* center rows within available height */
+  min-height: 120px; /* give room to center vertically */
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* centered heading */
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  border-radius: var(--radius-m);
+  background: color-mix(in lab, var(--bg-overlay) 8%, transparent);
+  border: 1px solid color-mix(in lab, currentColor 10%, transparent);
+  opacity: 1;
+  transition: opacity 250ms ease;
+}
+
+.logo {
+  display: block;
+  max-width: 100%;
+  height: 28px;
+  filter: saturate(0) opacity(0.9);
+}
+
+.logoIcon {
+  display: inline-flex;
+  font-size: 48px; /* larger icons */
+  line-height: 1;
+  color: currentColor;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+
+
+@media (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: 1fr; /* stack on tablet */
+  }
+  .cloud {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+  .cloud {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+

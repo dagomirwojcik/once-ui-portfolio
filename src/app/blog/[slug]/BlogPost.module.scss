@@ -1,0 +1,22 @@
+.tocContainer {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .tocContainer {
+    display: flex;
+  }
+}
+
+/* Add a little breathing room on mobile so the back button is tappable */
+.mainSection {
+  padding-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .mainSection {
+    padding-top: 35px; /* ensure button sits below any fixed header */
+  }
+}
+
+

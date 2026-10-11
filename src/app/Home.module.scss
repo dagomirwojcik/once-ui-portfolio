@@ -1,0 +1,29 @@
+.quoteAndCountdown {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Two-up layout for CountFx area next to a future component */
+.countdownPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .quoteAndCountdown {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .countdownPair {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+

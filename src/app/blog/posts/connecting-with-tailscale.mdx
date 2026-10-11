@@ -1,0 +1,59 @@
+---
+title: "Connecting with Tailscale"
+summary: "I use Tailscale to keep my devices connected no matter where I am, while keeping the setup private, flexible, and easy to manage."
+publishedAt: "2025-09-05"
+image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tailscale-Logo-Black.svg/3840px-Tailscale-Logo-Black.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+tag: "Blog"
+---
+
+<Media
+  enlarge
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tailscale-Logo-Black.svg/3840px-Tailscale-Logo-Black.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+  alt="Tailscale logo"
+  radius="xl"
+  border="neutral-alpha-medium"
+  aspectRatio="25/8"
+/>
+
+For a while, I’ve been looking for a networking setup that feels almost invisible. Something that lets my devices talk to each other wherever I am, without me needing to think about public IPs, NAT, or a pile of complicated rules. Tailscale ended up being the answer.
+
+I first started looking at it while messing around with my portable GL.iNet A1300 router, and it’s become one of those tools that quietly solves a lot of problems. It gives me a private, encrypted mesh network across my devices, and once I added things like Mullvad exit nodes and custom DNS, it started feeling like a genuinely useful part of my home setup.
+
+## Why I Use It 💡
+
+Tailscale creates a WireGuard mesh between devices so they can talk to each other securely, even when they’re on different networks. Each device gets a stable `100.x.x.x` address, which means I can use SSH, SMB, RDP, game streaming, and other services without worrying about whether I’m on home Wi‑Fi or out and about.
+
+For me, the biggest benefit is consistency. My PC, laptop, Steam Deck, servers, and small single-board devices all behave like they’re on the same LAN, even when they aren’t physically in the same place.
+
+## Per-Device Mullvad Exit Nodes 🔀
+
+One of the more useful things I’ve added is per-device routing through Mullvad. That means I can split my traffic in a way that makes sense for each device:
+
+- my home server can stay on its normal connection
+- my laptop can exit through Sweden
+- my phone can exit through the Netherlands
+- my console streaming setup can stay local for lower latency
+
+All of those devices still sit on the same Tailscale network, which is the key part. The exit node changes the internet-facing IP, but it doesn’t break the private mesh between everything else. It gives me flexibility without making the setup feel messy.
+
+## Custom DNS Keeps Everything Cleaner 🌐
+
+Tailscale’s MagicDNS is already useful, but custom DNS takes it further. I run my own resolver, so I can:
+
+- block ads and trackers
+- resolve internal hostnames cleanly
+- keep my DNS queries more private
+
+Tailscale makes that easy to push out to every device automatically. There’s no repetitive setup on each machine, just one general DNS layer that everything uses.
+
+## The Result ✅
+
+The setup now feels unified, secure, and flexible in a way I actually like:
+
+- every device can reach the others when needed
+- I can route traffic through different Mullvad locations per device
+- DNS is consistent and private
+- remote access still works when I’m away from home
+- game streaming from my console works from anywhere
+
+It’s the kind of network setup that just makes life easier. It follows me around without me needing to constantly reconfigure things, and that’s exactly what I wanted.

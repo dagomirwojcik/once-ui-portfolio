@@ -1,0 +1,94 @@
+@use "./breakpoints.scss" as breakpoints;
+
+.position {
+    position: sticky;
+    top: 0;
+}
+
+.mask {
+    pointer-events: none;
+    backdrop-filter: blur(0.5rem);
+    background: linear-gradient(to bottom, var(--page-background), var(--static-transparent));
+    mask-image: linear-gradient(rgba(0,0,0) 25%, rgba(0, 0, 0, 0) 100%);
+    mask-size: 100% 100%;
+}
+
+.navigationContainer {
+    backdrop-filter: blur(10px);
+    background: var(--blog-tag-bg, rgba(255, 255, 255, 0.1)) !important;
+    border: 1px solid var(--blog-tag-border, rgba(255, 255, 255, 0.3)) !important;
+    transition: all 0.2s ease;
+    
+    &:hover {
+        background: var(--blog-tag-bg-hover, rgba(255, 255, 255, 0.15)) !important;
+        border-color: var(--blog-tag-border-hover, rgba(255, 255, 255, 0.5)) !important;
+        transform: scale(1.02);
+    }
+}
+
+.navButton {
+    transition: all 0.2s ease;
+    
+    &:hover {
+        transform: scale(1.05);
+        background: var(--blog-tag-bg-hover, rgba(255, 255, 255, 0.2)) !important;
+        color: var(--blog-tag-text-hover, #fff) !important;
+        font-weight: 700;
+    }
+    
+    &[data-selected="true"] {
+        background: var(--blog-tag-bg-hover, rgba(255, 255, 255, 0.2)) !important;
+        color: var(--blog-tag-text-hover, #fff) !important;
+        font-weight: 700;
+        transform: scale(1.05);
+    }
+    
+    // Ensure nav button text remains black on hover in light theme
+    :global([data-theme='light']) & {
+        &:hover,
+        &[data-selected="true"] {
+            color: #000 !important;
+        }
+    }
+}
+
+.hideOnLarge {
+    display: flex;
+}
+
+.fadeOnLarge {
+    display: block;
+    pointer-events: none;
+}
+
+@media (min-width: breakpoints.$l) {
+    .hideOnLarge {
+        display: none !important;
+    }
+    
+    .fadeOnLarge {
+        display: none !important;
+    }
+}
+
+@media (max-width: breakpoints.$s) {
+    .position {
+        top: auto;
+        position: fixed;
+        bottom: var(--static-space-24);
+    }
+
+    .mask {
+        transform: rotate(180deg);
+        bottom: 0;
+    }
+    
+    // Mobile-specific navigation styling
+    .navButton {
+        // Ensure proper spacing for icon-only display on mobile
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+}

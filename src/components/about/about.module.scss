@@ -1,0 +1,182 @@
+@use "../breakpoints.scss" as breakpoints;
+
+.mainContainer {
+    // Default desktop layout
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.tableOfContents {
+    // Hide on mobile by default, show on desktop
+    display: none;
+    z-index: 10;
+    position: fixed;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    min-width: 200px;
+    max-width: 250px;
+}
+
+.hover {
+    transition: var(--transition-micro-medium);
+
+    &:hover {
+        transform: translateX(var(--static-space-4));
+    }
+}
+
+.avatar {
+    position: sticky;
+    height: fit-content;
+    top: var(--static-space-64);
+    flex-shrink: 0;
+}
+
+.foldingBox {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+:root[data-theme="dark"] .foldingBox {}
+
+:root[data-theme="light"] .foldingBox {
+  color: #111;
+}
+
+.tickerBox {
+  border: none;
+}
+
+:root[data-theme="dark"] .tickerBox {
+  border: none !important;
+}
+
+// Desktop layout - ensure proper side-by-side display
+@media (min-width: 769px) {
+    .mainContainer {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .tableOfContents {
+        display: none;
+    }
+
+    .avatar {
+        top: var(--static-space-64);
+        flex-shrink: 0;
+    }
+
+    .textAlign {
+        text-align: left;
+    }
+
+    .blockAlign {
+        align-self: flex-start;
+    }
+
+    .desktopSocialRow {
+        display: flex;
+        align-self: center;
+        width: 100%;
+    }
+
+    .mobileSocialRow {
+        display: none;
+    }
+}
+
+// Table of contents only shows on large desktop screens (1800px+)
+@media (min-width: 1700px) {
+    .tableOfContents {
+        display: flex;
+    }
+}
+
+// Mobile layout
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .tableOfContents {
+        display: none !important;
+    }
+
+    .avatar {
+        top: auto !important;
+        position: relative !important;
+        flex-shrink: 1 !important;
+        order: 1;
+    }
+
+    .textAlign {
+        text-align: center !important;
+    }
+
+    .blockAlign {
+        align-self: center !important;
+        order: 2;
+    }
+
+    .desktopSocialRow {
+        display: none !important;
+    }
+
+    .mobileSocialRow {
+        display: flex !important;
+        align-self: center !important;
+        width: 100%;
+    }
+
+    // Mobile spacing for name, title, and intro
+    .mobileNameSpacing {
+        margin-bottom: var(--static-space-24) !important;
+    }
+
+    .mobileTitleSpacing {
+        margin-bottom: var(--static-space-24) !important;
+    }
+
+    .mobileIntroSpacing {
+        margin-top: var(--static-space-24) !important;
+    }
+}
+
+// Work experience images
+.experienceImageWrapper {
+    overflow: hidden;
+}
+
+.experienceImage {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .experienceImageWrapper {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+    }
+
+    .experienceImage {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+}
+
+// Container for images row in experiences section
+.experienceImagesRow {}
+
+@media (max-width: 768px) {
+    .experienceImagesRow {
+        padding-left: 0 !important;
+    }
+}

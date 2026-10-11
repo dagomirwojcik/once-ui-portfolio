@@ -1,0 +1,340 @@
+// WeatherFx above content — fixed to viewport so leaves cover the full page
+.changelogWeather {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  width: 100vw;
+  height: 100dvh;
+  min-height: 100vh;
+}
+
+.changelogRoot {
+  position: relative;
+  padding-bottom: 4rem;
+  overflow: hidden;
+}
+
+.heroFilterRow {
+  width: 100%;
+  padding-top: 0.5rem;
+}
+
+.heroFilterField {
+  width: 100%;
+  max-width: 22rem;
+  min-width: 0;
+}
+
+.contentArea {
+  position: relative;
+  z-index: 2;
+  margin-top: 1rem;
+}
+
+.serviceStatusGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.serviceStatusCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 5.5rem;
+  border-radius: var(--radius-l);
+  padding: 1rem 1.125rem;
+  background: var(--glass-card-bg);
+  border: 2px solid var(--glass-card-border);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  box-shadow: 0 2px 8px var(--glass-card-shadow);
+  overflow: hidden;
+  z-index: var(--glass-z-index);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px var(--glass-card-shadow-hover);
+    filter: brightness(1.08);
+  }
+}
+
+.serviceStatusName {
+  margin: 0;
+  color: var(--glass-text);
+  line-height: 1.3;
+}
+
+.serviceStatusLabel {
+  margin: 0;
+  color: var(--glass-text-weak);
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.serviceStatusState {
+  margin: 0;
+  flex-shrink: 0;
+  color: var(--glass-text-weak);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 900px) {
+  .serviceStatusGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timelineContainer {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.entryCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: var(--radius-l);
+  padding: 1.25rem 1.5rem;
+  background: var(--glass-card-bg);
+  border: 2px solid var(--glass-card-border);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  box-shadow: 0 2px 8px var(--glass-card-shadow);
+  overflow: hidden;
+  z-index: var(--glass-z-index);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px var(--glass-card-shadow-hover);
+    filter: brightness(1.08);
+  }
+}
+
+.cardHeader {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 10.5rem) minmax(0, 1fr) minmax(5.5rem, auto);
+  gap: 1rem 1.25rem;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+
+.cardHeaderMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.cardHeaderTitle {
+  min-width: 0;
+  text-align: center;
+  justify-self: stretch;
+  align-self: center;
+}
+
+.cardHeaderDate {
+  justify-self: end;
+  text-align: right;
+  min-width: 0;
+  align-self: start;
+}
+
+.versionBadge,
+.versionBadgeMuted {
+  flex-shrink: 0;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-s);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.versionBadge {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--glass-tag-text);
+}
+
+.versionBadgeMuted {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-card-border);
+  color: var(--glass-text-weak);
+}
+
+.entryDate {
+  margin: 0;
+  color: var(--glass-text-weak);
+  white-space: nowrap;
+}
+
+.entryTitle {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--glass-text);
+  text-align: center;
+}
+
+.entryTitleMuted {
+  margin: 0;
+  font-style: italic;
+  opacity: 0.85;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .cardHeader {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    gap: 0.5rem 0.75rem;
+    align-items: start;
+  }
+
+  .cardHeaderMeta {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .cardHeaderDate {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+    text-align: right;
+  }
+
+  .cardHeaderTitle {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-self: stretch;
+  }
+
+  .entryDate {
+    white-space: nowrap;
+  }
+}
+
+.entryTags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.tagPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--glass-card-border);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--glass-tag-text);
+  line-height: 1.3;
+}
+
+.tagPillMajor {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 0.3rem 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--brand-on-background-strong, var(--glass-tag-text));
+  border-color: var(--brand-border-strong);
+  background: linear-gradient(
+    135deg,
+    var(--brand-alpha-medium),
+    var(--brand-alpha-weak)
+  );
+  box-shadow:
+    0 0 14px var(--brand-alpha-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      110deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.28) 50%,
+      transparent 65%
+    );
+    transform: translateX(-120%);
+    animation: majorTagShimmer 3.5s ease-in-out infinite;
+  }
+}
+
+@keyframes majorTagShimmer {
+  0%,
+  72%,
+  100% {
+    transform: translateX(-120%);
+  }
+
+  88% {
+    transform: translateX(120%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tagPillMajor::before {
+    animation: none;
+  }
+}
+
+.changeList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.changeListItem {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.625rem;
+  margin: 0;
+  padding: 0;
+}
+
+.changeListIcon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15em;
+  line-height: 0;
+  color: var(--glass-text-weak);
+}
+
+.changeListText {
+  display: block;
+  min-width: 0;
+  line-height: 1.55;
+  flex: 1;
+}

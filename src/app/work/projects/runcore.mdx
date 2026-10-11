@@ -1,0 +1,99 @@
+---
+title: "RunCore"
+publishedAt: "2026-06-01"
+summary: "I’m building RunCore as a privacy-first training tool that keeps workout data on-device and turns my runs into useful, personal feedback without relying on cloud services."
+images:
+  - "/images/projects/runcore1.PNG"
+team:
+  - name: "Dagomir Wojcik"
+    role: "Lead Developer"
+    avatar: "/images/avatar.avif"
+---
+
+RunCore started as a simple idea: I wanted a running tool that actually feels like mine. I didn’t want to depend on a subscription, an external API, or a platform that keeps my training data somewhere else. I wanted something lightweight, private, and useful enough to fit into my real routine.
+
+So I built RunCore around two things I care about most:
+
+- **My data stays on my device.**
+- **My insights feel personal, immediate, and useful.**
+
+The setup is deliberately simple. I use Apple Shortcuts to record the details of each run, and Apple Intelligence to analyse that information locally on the device. Nothing gets sent away for processing, and I keep full control over the workflow.
+
+---
+
+## How it works
+
+### 1. I log the run with a Shortcut
+
+After each workout, I trigger a Shortcut that captures the details I care about most:
+
+- distance
+- duration
+- pace
+- heart rate
+- cadence
+- conditions
+- effort
+
+That small bit of structure keeps the whole system predictable. I don’t need a big ecosystem around it, and I’m not relying on fragile integrations or hidden platform rules.
+
+### 2. Apple Intelligence analyses it locally
+
+Once the run data is in, Apple Intelligence processes it on-device. That’s the heart of the privacy model here: the analysis happens locally, without sending my workout information to external servers.
+
+From there, it turns raw numbers into more useful outputs, such as:
+
+- performance summaries
+- training load estimates
+- pacing trends
+- recovery suggestions
+- coaching notes
+
+It’s the kind of feedback I actually want to read after a run, without having to chase it through a third-party dashboard.
+
+### 3. I get a readable RunCore report
+
+The Shortcut returns a clean report with the main takeaways from the session. It’s fast, consistent, and designed to help me understand what happened in the run without needing a full fitness platform around it.
+
+---
+
+## Why I built it this way
+
+The fitness ecosystem is increasingly messy. Strava has changed its API direction, Apple has restricted some automated HealthKit exports, and a lot of apps are built around cloud processing and subscriptions. I wanted something simpler.
+
+I wanted a tool that was:
+
+- private
+- local
+- personal
+- easy to understand
+- fully under my control
+
+RunCore avoids the parts I don’t want in my workflow:
+
+- API limitations
+- subscription walls
+- cloud storage
+- dependency on external services
+
+And it leans into the parts that matter to me:
+
+- local processing
+- minimal manual input
+- privacy-first design
+- Apple-native automation
+
+---
+
+## Still in progress
+
+RunCore is close to a first full release, but I’m still refining a few parts of it:
+
+- the Shortcut input flow
+- the Apple Intelligence prompts
+- the format of the final report
+- a few possible integrations with my personal dashboard
+
+The goal is a running analyst that feels effortless to use, useful enough to trust, and completely aligned with how I want to work with my own data.
+
+---

@@ -1,0 +1,11 @@
+.mainSection {
+  padding-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .mainSection {
+    padding-top: 35px; /* ensure button sits below any fixed header */
+  }
+}
+
+

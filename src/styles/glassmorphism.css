@@ -1,0 +1,176 @@
+/* Glassmorphism Theme Variables */
+:root {
+  /* Dark theme glassmorphism variables (default for :root) */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-hover: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(255, 255, 255, 0.05);
+  --glass-shadow-hover: rgba(255, 255, 255, 0.1);
+  --glass-text: var(--color-text-strong);
+  --glass-text-weak: var(--color-text-weak);
+  --glass-backdrop: blur(8px);
+  --glass-z-index: 1;
+  
+  /* Button glassmorphism */
+  --glass-button-bg: rgba(255, 255, 255, 0.05);
+  --glass-button-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-button-border: rgba(255, 255, 255, 0.15);
+  --glass-button-text: var(--color-text-strong);
+  
+  /* Card glassmorphism */
+  --glass-card-bg: rgba(255, 255, 255, 0.1);
+  --glass-card-bg-hover: rgba(255, 255, 255, 0.15);
+  --glass-card-border: rgba(255, 255, 255, 0.3);
+  --glass-card-border-hover: rgba(255, 255, 255, 0.5);
+  --glass-card-shadow: rgba(255, 255, 255, 0.1);
+  --glass-card-shadow-hover: rgba(255, 255, 255, 0.2);
+  
+  /* Tag glassmorphism */
+  --glass-tag-bg: rgba(255, 255, 255, 0.05);
+  --glass-tag-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-tag-border: rgba(255, 255, 255, 0.15);
+  --glass-tag-border-hover: rgba(255, 255, 255, 0.3);
+  --glass-tag-text: rgba(255, 255, 255, 0.9);
+  --glass-tag-text-hover: var(--color-text-strong);
+}
+
+/* Dark theme glassmorphism variables */
+[data-theme="dark"] {
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-hover: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(255, 255, 255, 0.05);
+  --glass-shadow-hover: rgba(255, 255, 255, 0.1);
+  --glass-text: var(--color-text-strong);
+  --glass-text-weak: var(--color-text-weak);
+  --glass-backdrop: blur(8px);
+  --glass-z-index: 1;
+  
+  --glass-button-bg: rgba(255, 255, 255, 0.05);
+  --glass-button-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-button-border: rgba(255, 255, 255, 0.15);
+  --glass-button-text: var(--color-text-strong);
+  
+  --glass-card-bg: rgba(255, 255, 255, 0.1);
+  --glass-card-bg-hover: rgba(255, 255, 255, 0.15);
+  --glass-card-border: rgba(255, 255, 255, 0.3);
+  --glass-card-border-hover: rgba(255, 255, 255, 0.5);
+  --glass-card-shadow: rgba(255, 255, 255, 0.1);
+  --glass-card-shadow-hover: rgba(255, 255, 255, 0.2);
+  
+  --glass-tag-bg: rgba(255, 255, 255, 0.05);
+  --glass-tag-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-tag-border: rgba(255, 255, 255, 0.15);
+  --glass-tag-border-hover: rgba(255, 255, 255, 0.3);
+  --glass-tag-text: rgba(255, 255, 255, 0.9);
+  --glass-tag-text-hover: var(--color-text-strong);
+}
+
+/* Light theme glassmorphism variables */
+[data-theme="light"] {
+  --glass-bg: rgba(240, 240, 250, 0.15);
+  --glass-bg-hover: rgba(240, 240, 250, 0.25);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-border-hover: rgba(0, 0, 0, 0.2);
+  --glass-shadow: rgba(0, 0, 0, 0.05);
+  --glass-shadow-hover: rgba(0, 0, 0, 0.1);
+  --glass-text: var(--color-text-strong);
+  --glass-text-weak: var(--color-text-weak);
+  --glass-backdrop: blur(8px);
+  --glass-z-index: 1;
+  
+  --glass-button-bg: rgba(240, 240, 250, 0.2);
+  --glass-button-bg-hover: rgba(240, 240, 250, 0.3);
+  --glass-button-border: rgba(0, 0, 0, 0.1);
+  --glass-button-text: var(--color-text-strong);
+  
+  --glass-card-bg: rgba(240, 240, 250, 0.15);
+  --glass-card-bg-hover: rgba(240, 240, 250, 0.25);
+  --glass-card-border: rgba(0, 0, 0, 0.15);
+  --glass-card-border-hover: rgba(0, 0, 0, 0.25);
+  --glass-card-shadow: rgba(0, 0, 0, 0.05);
+  --glass-card-shadow-hover: rgba(0, 0, 0, 0.1);
+  
+  --glass-tag-bg: rgba(240, 240, 250, 0.2);
+  --glass-tag-bg-hover: rgba(240, 240, 250, 0.3);
+  --glass-tag-border: rgba(0, 0, 0, 0.1);
+  --glass-tag-border-hover: rgba(0, 0, 0, 0.2);
+  --glass-tag-text: rgba(0, 0, 0, 0.7);
+  --glass-tag-text-hover: var(--color-text-strong);
+}
+
+/* System theme detection */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --glass-bg: rgba(240, 240, 250, 0.15);
+    --glass-bg-hover: rgba(240, 240, 250, 0.25);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-border-hover: rgba(0, 0, 0, 0.2);
+    --glass-shadow: rgba(0, 0, 0, 0.05);
+    --glass-shadow-hover: rgba(0, 0, 0, 0.1);
+    --glass-text: var(--color-text-strong);
+    --glass-text-weak: var(--color-text-weak);
+    --glass-backdrop: blur(8px);
+    --glass-z-index: 1;
+    
+    --glass-button-bg: rgba(240, 240, 250, 0.2);
+    --glass-button-bg-hover: rgba(240, 240, 250, 0.3);
+    --glass-button-border: rgba(0, 0, 0, 0.1);
+    --glass-button-text: var(--color-text-strong);
+    
+    --glass-card-bg: rgba(240, 240, 250, 0.15);
+    --glass-card-bg-hover: rgba(240, 240, 250, 0.25);
+    --glass-card-border: rgba(0, 0, 0, 0.15);
+    --glass-card-border-hover: rgba(0, 0, 0, 0.25);
+    --glass-card-shadow: rgba(0, 0, 0, 0.05);
+    --glass-card-shadow-hover: rgba(0, 0, 0, 0.1);
+    
+    --glass-tag-bg: rgba(240, 240, 250, 0.2);
+    --glass-tag-bg-hover: rgba(240, 240, 250, 0.3);
+    --glass-tag-border: rgba(0, 0, 0, 0.1);
+    --glass-tag-border-hover: rgba(0, 0, 0, 0.2);
+    --glass-tag-text: rgba(0, 0, 0, 0.7);
+    --glass-tag-text-hover: var(--color-text-strong);
+  }
+}
+
+/* Prevent layout shift when the vertical scrollbar appears/disappears */
+html {
+  scrollbar-gutter: stable;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-bg-hover: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-hover: rgba(255, 255, 255, 0.2);
+    --glass-shadow: rgba(255, 255, 255, 0.05);
+    --glass-shadow-hover: rgba(255, 255, 255, 0.1);
+    --glass-text: var(--color-text-strong);
+    --glass-text-weak: var(--color-text-weak);
+    --glass-backdrop: blur(8px);
+    --glass-z-index: 1;
+    
+    --glass-button-bg: rgba(255, 255, 255, 0.05);
+    --glass-button-bg-hover: rgba(255, 255, 255, 0.08);
+    --glass-button-border: rgba(255, 255, 255, 0.15);
+    --glass-button-text: var(--color-text-strong);
+    
+    --glass-card-bg: rgba(255, 255, 255, 0.1);
+    --glass-card-bg-hover: rgba(255, 255, 255, 0.15);
+    --glass-card-border: rgba(255, 255, 255, 0.3);
+    --glass-card-border-hover: rgba(255, 255, 255, 0.5);
+    --glass-card-shadow: rgba(255, 255, 255, 0.1);
+    --glass-card-shadow-hover: rgba(255, 255, 255, 0.2);
+    
+    --glass-tag-bg: rgba(255, 255, 255, 0.05);
+    --glass-tag-bg-hover: rgba(255, 255, 255, 0.08);
+    --glass-tag-border: rgba(255, 255, 255, 0.15);
+    --glass-tag-border-hover: rgba(255, 255, 255, 0.3);
+    --glass-tag-text: rgba(255, 255, 255, 0.9);
+    --glass-tag-text-hover: var(--color-text-strong);
+  }
+}
